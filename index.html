@@ -3,60 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <title>Valentine?</title>
+
   <style>
     body {
       margin: 0;
       height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef6);
       display: flex;
       justify-content: center;
       align-items: center;
-      background: pink;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
     }
-    .box {
+
+    .container {
       text-align: center;
     }
+
+    /* BIG CUTE IMAGE */
+    .cute-img {
+      width: 260px;
+      margin-bottom: 25px;
+    }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin-bottom: 30px;
+      color: #ff4d6d;
     }
+
     button {
-      font-size: 1.2rem;
-      padding: 10px 20px;
+      font-size: 1.8rem;          /* 👈 BIGGER BUTTON TEXT */
+      padding: 18px 36px;         /* 👈 BIGGER BUTTON SIZE */
       margin: 15px;
-      cursor: pointer;
       border: none;
-      border-radius: 8px;
+      border-radius: 14px;
+      cursor: pointer;
     }
+
     #yes {
       background-color: #ff4d6d;
       color: white;
     }
+
     #no {
-      background-color: #333;
+      background-color: #444;
       color: white;
       position: absolute;
     }
   </style>
 </head>
+
 <body>
-  <div class="box">
+  <div class="container">
+    <!-- Cute hugging cats GIF -->
+    <img
+      class="cute-img"
+      src="https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif"
+      alt="Cute hugging cats"
+    />
+
     <h1>Will you be my Valentine? ❤️</h1>
-    <button id="yes">Yes 💖</button>
-    <button id="no">No 💔</button>
+
+    <button id="yes">YES 💖</button>
+    <button id="no">NO 💔</button>
   </div>
 
   <script>
     const noBtn = document.getElementById("no");
 
     noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
     });
 
     document.getElementById("yes").onclick = () => {
-      document.body.innerHTML = "<h1 style='color:#ff4d6d;text-align:center;'>YAYYY 💕 I knew it 😌</h1>";
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          flex-direction:column;
+          background:#ffeef6;
+          font-family:Arial;
+        ">
+          <h1 style="font-size:3.2rem;color:#ff4d6d;">YAYYYY 💕</h1>
+          <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="280">
+        </div>
+      `;
     };
   </script>
 </body>
